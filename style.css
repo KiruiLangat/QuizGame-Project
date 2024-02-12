@@ -1,0 +1,238 @@
+body {
+    margin-top: 60px;
+    padding: 30px;
+    background: url('/static/questions.webp') center/cover no-repeat;
+    font-family:'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; 
+}
+.container h1{
+    align-items: center;
+    margin-bottom: 260px;
+    margin-right: 35px;
+
+}
+@keyframes blinkAnimation {
+    0% {opacity: 1;}
+    50% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.blink {
+    animation: blinkAnimation 0.8s infinite ;
+
+}
+
+.container {
+     cursor:pointer;
+    margin-top: auto;
+    text-align: center;
+    color: white;
+}
+
+/*This is for login*/
+.login {
+    margin: 0px;
+    padding: 30px;
+    background: url('/static/loginpage.avif') center/cover no-repeat;
+    image-rendering: optimizeQuality;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    min-height: 80vh; 
+    width: 100vh; 
+}
+.loginbox {
+    text-align: center;
+    padding: 50px;
+    color: black;
+    /*background-color: transparent; */
+}
+form {
+    display: inline-block;
+    background-color: transparent;
+    color: antiquewhite;
+    padding: 30px;
+    border-radius: 20px;
+}
+label {
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 10px;   
+}
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: medium;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 30px;
+    background-color: transparent;
+    color: white;
+}
+button {
+    margin-top: 10px;
+    background-color: black ;
+    color: rgb(255, 231, 199);
+    font-size:medium ;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+button:hover {
+    background-color:rgb(255, 231, 199) ;
+    color: black;   
+}
+/*topics*/
+.topics{
+    background-image: url(/static/Background.png);
+    margin:0;
+    padding: 0px;
+}
+.rows{
+    margin-top: 55px;
+    display:flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content:space-around;
+    
+}
+.topics h1,.topics h2{
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+.topic1{
+    display: flex;
+    flex-direction: row;
+    align-items:flex-end;
+    justify-content:space-evenly;
+    margin-top: 10px;
+    margin: 5px;
+    padding: 50px;
+    color: aliceblue;
+    background-image: url(/static/animals.png);
+    border-radius: 12px;
+    width: 100%;
+}
+.topic2{
+    display: flex;
+    flex-direction: row;
+    align-items:flex-end;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 50px;
+    color: aliceblue;
+    font-weight: 500;
+    background-image: url(/static/food.png);
+    image-orientation: flip;
+    border-radius: 12px;
+    width: 100%;
+}
+.topic3{
+    display: flex;
+    flex-direction: row;
+    align-items:flex-end;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 50px;
+    color: aliceblue;
+    background-image: url(/static/cities.png);
+    border-radius: 12px;
+    width: 100%;
+
+}
+/*gameplay*/
+.gameplay {
+    background-image: url(/static/animals1.jpg);
+    background-color: rgb(131, 89, 34);
+    background-blend-mode:overlay;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;    
+}
+
+.gameplay button {
+    margin-top: 10px;
+    background-color: rgb(255, 231, 199);
+    color: black;
+    font-size:large ;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bolder;
+    border-radius: 30px;
+    cursor: pointer;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+.gameplay button:hover {
+    background-color: greenyellow ;
+    color: black;
+    
+}
+
+.gameplay h1 {
+    color: black ;
+    background-color: rgb(255, 231, 199);
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 5px;
+    padding: 5px;
+}
+.gameplay p{
+    color: antiquewhite;
+    text-align: center;
+}
+.options-container{
+    align-items: flex-start;
+}
+
+/*score page*/
+.score {
+    margin: 0px;
+    padding: 30px;
+    background: url('/static/gameoverpage.jpg') center/cover no-repeat;
+    image-rendering: auto;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; 
+    width: 100vh;
+}
+
+.score h1 {
+    align-items: center;
+    color: #ff0000;
+    font-size:60px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.score div {
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    flex-direction: column;
+    align-items: center;
+    font-size: large;
+    justify-content: center;
+    color:white;
+}
+
+.score a {
+    text-align: center;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+}

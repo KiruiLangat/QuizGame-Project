@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the CSS stylesheet -->
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body class="gameplay">
+    <!-- Heading for the gameplay page -->
+    <h1 id="question-text">LET THE GAMES BEGIN</h1>
+
+    <!-- Div to hold the option buttons -->
+    <div class="options-container">
+        <!-- Option buttons -->
+        <button class="option" data-answer="A">Option A</button>
+        <button class="option" data-answer="B">Option B</button>
+    </div>
+
+    <!-- Another div to hold the option buttons -->
+    <div class="options-container">
+        <!-- Option buttons -->
+        <button class="option" data-answer="C">Option C</button>
+        <button class="option" data-answer="D">Option D</button>
+    </div>
+
+    <!-- Paragraph to display the number of tries left -->
+    <p id="tries-left">Tries left: <span id="tries-count">3</span></p>
+
+    <!-- Script to handle the gameplay logic -->
+    <script>
+        // Define questions from server-side code
+        let question = {{ questions | tojson | safe }};
+        let currentIndex = 0;
+        let tries = 3;
+        let score = 0;
+
+        // Function to display the current question and options
+        function displayQuestion() {
+            if (currentIndex < question.length) {
+                let currentQuestion = question[currentIndex];
+                document.getElementById('question-text').innerText = currentQuestion[1];
+
+                let optionButtons = document.querySelectorAll('.option');
+                for (let i = 0; i < optionButtons.length; i++) {
+                    optionButtons[i].innerText = currentQuestion[2].split(" ")[i];
+                }
+            } else {
+                redirectToScore();
+            }
+        }
+        // Function to check the user's answer
+        function checkAnswer(userAnswer) {
+            let currentQuestion = question[currentIndex];
+            let correctAnswer = currentQuestion[3].trim();
+
+            if (userAnswer.toUpperCase() === correctAnswer.toUpperCase()) {
+                score +=10;
+            } else {
+                tries--;
+                if (tries <= 0) {
+                    redirectToScore();
+                    return;
+                }
+                document.getElementById('tries-count').innerText = tries;
+            }
+            currentIndex++;
+            displayQuestion();
+        }
+        // Add event listeners to option buttons
+        let optionButtons = document.querySelectorAll('.option');
+        optionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                checkAnswer(button.getAttribute('data-answer'));
+            });
+        });
+        // Function to redirect to score page
+        function redirectToScore() {
+            window.location.href = `/scores?score=${score}&tries=${tries}`;
+        }
+        // Display the first question
+        displayQuestion();
+    </script>
+</body>
+
+</html>

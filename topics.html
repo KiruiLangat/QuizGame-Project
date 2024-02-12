@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width=device-width,initial-scale=1.0">
+    <!-- Link to the CSS stylesheet -->
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="topics">
+    <!-- Heading for the topics page -->
+    <h1>CHOOSE TOPIC</h1>
+    <!-- Div to hold the topic options -->
+    <div class="rows"> 
+        <!-- Div for the 'Animals' topic -->
+        <div class="topic1">
+            <h2>ANIMALS</h2>
+            <!-- Buttons for different difficulty levels -->
+            <button type="button" onclick="redirectToGame(1,1)" name="topic" value="1" data-difficulty="1">Easy</button>
+            <button type="button" onclick="redirectToGame(1,2)" name="topic" value="1" data-difficulty="2">Hard</button>
+            <button type="button" onclick="redirectToGame(1,3)" name="topic" value="1" data-difficulty="3">Expert</button>
+        </div>
+        <!-- Div for the 'Food' topic -->
+        <div class="topic2">
+            <h2>FOOD</h2>
+            <!-- Buttons for different difficulty levels -->
+            <button type="button" onclick="redirectToGame(2,1)" name="topic" value="2" data-difficulty="1">Easy</button>           
+            <button type="button" onclick="redirectToGame(2,2)" name="topic" value="2" data-difficulty="2">Hard</button>           
+            <button type="button" onclick="redirectToGame(2,3)" name="topic" value="2" data-difficulty="3">Expert</button>           
+        </div>
+        <!-- Div for the 'Cities' topic -->
+        <div class="topic3">
+            <h2>CITIES</h2>
+            <!-- Buttons for different difficulty levels -->
+            <button type="button" onclick="redirectToGame(3,1)" name="topic" value="3" data-difficulty="1">Easy</button>
+            <button type="button" onclick="redirectToGame(3,2)" name="topic" value="3" data-difficulty="2">Hard</button>
+            <button type="button" onclick="redirectToGame(3,3)" name="topic" value="3" data-difficulty="3">Expert</button>
+        </div>
+    </div>
+    
+    <!-- Script to redirect to the gameplay page with the selected topic and difficulty -->
+    <script>
+    function redirectToGame(topic,difficulty){
+        window.location.href = `/gameplay?topic=${topic}&difficulty=${difficulty}`;
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the CSS stylesheet -->
+    <link rel="stylesheet" href="../static/style.css">
+
+</head>
+<body>
+    <div class="container">
+         <!-- Header with a blinking effect, clicking redirects to the login page -->
+        <h1 id="startgame" class="blink" onclick="redirectToquizgame()">
+            <i>Start Quiz</i>
+        </h1>
+    </div>
+    <!-- JavaScript section for redirection and blinking effect -->
+    <script>
+        // Function to redirect to the login page
+        function redirectToquizgame(){
+            window.location.href= "/login";
+        }
+
+        // Function to toggle the 'blink' class for the blinking effect
+        function toggleBlink(){
+            const StartGameText= document.getElementById('startgame');
+            StartGameText.classList.toggle('blink');
+        }
+        // Set interval to toggle blink every 400 milliseconds
+        setInterval(toggleBlink, 400);
+    </script>
+</body>
+</html>

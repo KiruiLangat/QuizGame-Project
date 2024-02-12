@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the CSS stylesheet -->
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body class="score">
+    <!-- Div to hold the game over message and score -->
+    <div>
+        <!-- Game over message -->
+        <h1>GAME OVER!</h1>
+        <div>
+            <!-- Display the user's score -->
+            <h2>Your Score: {{ score }}</h2>    
+            <!-- Conditional statements to display a message based on the user's score and tries -->
+            {% if score is not none and tries > 0 %}
+                <h3>Congratulations!  You completed the game with {{ tries }} tries left.</h3>
+            {% else %}
+                <h3>You ran out of tries. Better luck next time!</h3>
+            {% endif %}
+        </div>
+        <!-- Link to play the game again -->
+        <a href="/topics">Play again</a> 
+    </div>
+</body>
+
+</html>
